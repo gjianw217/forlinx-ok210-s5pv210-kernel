@@ -1,0 +1,33 @@
+GBLW210 Linux Kernel 4.19
+====
+编译: make -j24 LOADADDR=20008000 uImage dtbs
+运行: tftpboot 30000000 arch/arm/boot/dts/s5pv210-gblw210.dtb; tftpboot 20007fc0 arch/arm/boot/uImage; bootm 20007fc0 - 30000000
+
+已测试可行功能:
+1. dm9000网卡
+2. NFS根文件系统
+3. SD卡
+4. I2C
+5. SPI
+6. RTC
+
+
+Linux kernel
+============
+
+There are several guides for kernel developers and users. These guides can
+be rendered in a number of formats, like HTML and PDF. Please read
+Documentation/admin-guide/README.rst first.
+
+In order to build the documentation, use ``make htmldocs`` or
+``make pdfdocs``.  The formatted documentation can also be read online at:
+
+    https://www.kernel.org/doc/html/latest/
+
+There are various text files in the Documentation/ subdirectory,
+several of them using the Restructured Text markup notation.
+See Documentation/00-INDEX for a list of what is contained in each file.
+
+Please read the Documentation/process/changes.rst file, as it contains the
+requirements for building and running the kernel, and information about
+the problems which may result by upgrading your kernel.
